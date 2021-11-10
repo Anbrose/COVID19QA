@@ -15,6 +15,6 @@ class CovidinfoprocessingPipeline:
         with open("E:\\UNSWMPHIL\COVIDInfoPRocessing\COVIDInfoPRocessing\data\sample.txt", 'ab') as f:
             context = BeautifulSoup(item['raw_text']).p.string
             if context != None:
-                f.write(context.encode('GB18030'))
+                f.write((context + "\n").encode('GB18030'))
         return None
 
